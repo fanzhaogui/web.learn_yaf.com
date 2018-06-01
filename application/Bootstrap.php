@@ -12,4 +12,10 @@ class Bootstrap extends Yaf_Bootstrap_Abstract
 		// 关闭自动加载模板
 		Yaf_Dispatcher::getInstance()->autoRender(false);
 	}
+
+	public function _initPlugin(Yaf_Dispatcher $dispatcher)
+	{	
+		$user = new UserPlugin();
+		$dispatcher->registerPlugin($user);
+	}
 }
